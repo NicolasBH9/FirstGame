@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tg8xrpj8bpvo"
+path="res://.godot/imported/DespacitoSpider.obj-c86d7b942f30c12dfd3108fa3001ca01.mesh"
+
+[deps]
+
+files=["res://.godot/imported/DespacitoSpider.obj-c86d7b942f30c12dfd3108fa3001ca01.mesh"]
+
+source_file="res://DespacitoSpider.obj"
+dest_files=["res://.godot/imported/DespacitoSpider.obj-c86d7b942f30c12dfd3108fa3001ca01.mesh", "res://.godot/imported/DespacitoSpider.obj-c86d7b942f30c12dfd3108fa3001ca01.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

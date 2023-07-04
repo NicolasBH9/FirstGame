@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://cj2pch1ngjaon"]
+
+[ext_resource type="ArrayMesh" uid="uid://tg8xrpj8bpvo" path="res://DespacitoSpider.obj" id="1_acu15"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ajaci"]
+sky_top_color = Color(0.360784, 0.529412, 0.635294, 1)
+sky_horizon_color = Color(0.780392, 0.466667, 0.654902, 1)
+
+[sub_resource type="Sky" id="Sky_pe8lw"]
+sky_material = SubResource("ProceduralSkyMaterial_ajaci")
+
+[sub_resource type="Environment" id="Environment_b0bpe"]
+background_mode = 2
+sky = SubResource("Sky_pe8lw")
+ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xy7c"]
+albedo_color = Color(0, 0.568627, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cdbe"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2t6me"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1g2b"]
+albedo_color = Color(0.133333, 0.478431, 0.690196, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7b2oi"]
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b0bpe")
+
+[node name="sb_floor" type="StaticBody3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="sb_floor"]
+size = Vector3(10, 0.2, 10)
+material = SubResource("StandardMaterial3D_5xy7c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sb_floor"]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_7cdbe")
+
+[node name="ch_spider" type="CharacterBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ch_spider"]
+transform = Transform3D(0.0282463, 0, 0, 0, 0.0305074, 0, 0, 0, 0.0299181, -4.0417, 0.129297, -3.89227)
+mesh = ExtResource("1_acu15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ch_spider"]
+transform = Transform3D(-0.00358447, -1.28726, 0, 1.25999, -0.00366206, 0, 0, 0, 0.996815, -3.99208, 0.152902, -3.85773)
+shape = SubResource("SphereShape3D_2t6me")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206708, 0.571812, 0.076932)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+transform = Transform3D(0.534509, 0, 0, 0, 0.488034, 0, 0, 0, -0.515435, -1.06522, -0.249565, -1.24168)
+material = SubResource("StandardMaterial3D_v1g2b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.52544, 0, 0, 0, 0.52544, 0, 0, 0, 0.52544, -1.08888, -0.247151, -1.24759)
+shape = SubResource("BoxShape3D_7b2oi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.0111182, 0.000920042, -0.999938, -0.00340084, 0.999994, 0.000957908, 0.999932, 0.00341128, -0.011115, -9.63726, 1.96104, 0.0217539)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.968869, 0.247574, 0, -0.247574, 0.968869, 0, 0, 0, 1, -0.301161, 3.23251, -0.229126)
+light_color = Color(0.956863, 0.643137, 0.419608, 1)
+light_energy = 15.0
+shadow_enabled = true
