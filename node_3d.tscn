@@ -1,6 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj2pch1ngjaon"]
+[gd_scene load_steps=23 format=3 uid="uid://cj2pch1ngjaon"]
 
 [ext_resource type="ArrayMesh" uid="uid://tg8xrpj8bpvo" path="res://DespacitoSpider.obj" id="1_acu15"]
+[ext_resource type="Script" path="res://ch_spider.gd" id="1_s11hx"]
+[ext_resource type="Script" path="res://Player.gd" id="2_n5nj4"]
+[ext_resource type="ArrayMesh" uid="uid://dlrdxhjydd64g" path="res://Models/Environment/naturePack_014.obj" id="4_y38s8"]
+[ext_resource type="ArrayMesh" uid="uid://ev16aanuhijp" path="res://Models/Environment/naturePack_015.obj" id="5_s7l24"]
+[ext_resource type="ArrayMesh" uid="uid://bgmtj008huecr" path="res://Models/Environment/naturePack_018.obj" id="6_sm5xj"]
+[ext_resource type="ArrayMesh" uid="uid://cg4tsnwkr1xc1" path="res://Models/Environment/naturePack_019.obj" id="7_m2s1l"]
+[ext_resource type="ArrayMesh" uid="uid://dkvy4gm3colkl" path="res://Models/Environment/naturePack_066.obj" id="8_otiq1"]
+[ext_resource type="ArrayMesh" uid="uid://jup2bn831ttr" path="res://Models/Environment/naturePack_065.obj" id="9_biidn"]
+[ext_resource type="ArrayMesh" uid="uid://3ikd55hkri5i" path="res://Models/Environment/naturePack_022.obj" id="10_6f175"]
+[ext_resource type="ArrayMesh" uid="uid://letsafc4e15m" path="res://Models/Environment/naturePack_016.obj" id="11_c4xgg"]
+[ext_resource type="ArrayMesh" uid="uid://jpyqxfentgqd" path="res://Models/Environment/naturePack_017.obj" id="12_hdlst"]
+[ext_resource type="ArrayMesh" uid="uid://dlkgtofdm0isj" path="res://Models/Environment/naturePack_020.obj" id="13_4mtcx"]
+[ext_resource type="ArrayMesh" uid="uid://d0g703j0jmbl4" path="res://Models/Environment/naturePack_021.obj" id="14_bl0pk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ajaci"]
 sky_top_color = Color(0.360784, 0.529412, 0.635294, 1)
@@ -32,41 +45,217 @@ albedo_color = Color(0.133333, 0.478431, 0.690196, 1)
 environment = SubResource("Environment_b0bpe")
 
 [node name="sb_floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="sb_floor"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 size = Vector3(10, 0.2, 10)
 material = SubResource("StandardMaterial3D_5xy7c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="sb_floor"]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(12, 0, 0, 0, 0.23, 0, 0, 0, 12, 0, 0, 0)
 shape = SubResource("BoxShape3D_7cdbe")
 
-[node name="ch_spider" type="CharacterBody3D" parent="."]
+[node name="ch_spider" type="CharacterBody3D" parent="." groups=["Spiders"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.529717, 0, 0.412227)
+script = ExtResource("1_s11hx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ch_spider"]
 transform = Transform3D(0.0282463, 0, 0, 0, 0.0305074, 0, 0, 0, 0.0299181, -4.0417, 0.129297, -3.89227)
 mesh = ExtResource("1_acu15")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ch_spider"]
-transform = Transform3D(-0.00358447, -1.28726, 0, 1.25999, -0.00366206, 0, 0, 0, 0.996815, -3.99208, 0.152902, -3.85773)
+transform = Transform3D(-0.00358451, -1.25999, 0, 1.25999, -0.00358451, 0, 0, 0, 1.26, -3.99208, 0.152902, -3.85773)
 shape = SubResource("SphereShape3D_2t6me")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206708, 0.571812, 0.076932)
+[node name="ch_spider2" type="CharacterBody3D" parent="." groups=["Spiders"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.59083, 0, 9.09145)
+script = ExtResource("1_s11hx")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ch_spider2"]
+transform = Transform3D(0.0282463, 0, 0, 0, 0.0305074, 0, 0, 0, 0.0299181, -4.0417, 0.129297, -3.89227)
+mesh = ExtResource("1_acu15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ch_spider2"]
+transform = Transform3D(-0.00358451, -1.25999, 0, 1.25999, -0.00358451, 0, 0, 0, 1.26, -3.99208, 0.152902, -3.85773)
+shape = SubResource("SphereShape3D_2t6me")
+
+[node name="ch_spider3" type="CharacterBody3D" parent="." groups=["Spiders"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60991, 0, 3.38296)
+script = ExtResource("1_s11hx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ch_spider3"]
+transform = Transform3D(0.0282463, 0, 0, 0, 0.0305074, 0, 0, 0, 0.0299181, -4.0417, 0.129297, -3.89227)
+mesh = ExtResource("1_acu15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ch_spider3"]
+transform = Transform3D(-0.00358451, -1.25999, 0, 1.25999, -0.00358451, 0, 0, 0, 1.26, -3.99208, 0.152902, -3.85773)
+shape = SubResource("SphereShape3D_2t6me")
+
+[node name="Player" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206708, 0.571812, 0.076932)
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("2_n5nj4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Player"]
 transform = Transform3D(0.534509, 0, 0, 0, 0.488034, 0, 0, 0, -0.515435, -1.06522, -0.249565, -1.24168)
 material = SubResource("StandardMaterial3D_v1g2b")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.52544, 0, 0, 0, 0.52544, 0, 0, 0, 0.52544, -1.08888, -0.247151, -1.24759)
 shape = SubResource("BoxShape3D_7b2oi")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.0111182, 0.000920042, -0.999938, -0.00340084, 0.999994, 0.000957908, 0.999932, 0.00341128, -0.011115, -9.63726, 1.96104, 0.0217539)
+transform = Transform3D(0.999932, 0.00341128, -0.011115, -0.00150791, 0.985965, 0.166946, 0.0115285, -0.166918, 0.985903, -0.547403, 3.35582, 11.6688)
+near = 0.09
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(0.968869, 0.247574, 0, -0.247574, 0.968869, 0, 0, 0, 1, -0.301161, 3.23251, -0.229126)
 light_color = Color(0.956863, 0.643137, 0.419608, 1)
 light_energy = 15.0
 shadow_enabled = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="NaturePack014" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8111, 0.138, 7.04113)
+mesh = ExtResource("4_y38s8")
+skeleton = NodePath("../..")
+
+[node name="NaturePack015" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09795, 0.138, -5.66312)
+mesh = ExtResource("5_s7l24")
+skeleton = NodePath("../..")
+
+[node name="NaturePack018" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93692, 0.138, -5.72936)
+mesh = ExtResource("6_sm5xj")
+skeleton = NodePath("../..")
+
+[node name="NaturePack019" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97693, 0.138, 7.02574)
+mesh = ExtResource("7_m2s1l")
+skeleton = NodePath("../..")
+
+[node name="NaturePack066" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17879, 0.138, -5.51752)
+mesh = ExtResource("8_otiq1")
+skeleton = NodePath("../..")
+
+[node name="NaturePack067" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05044, 0.138, -5.30171)
+mesh = ExtResource("8_otiq1")
+skeleton = NodePath("../..")
+
+[node name="NaturePack065" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8849, 0, -2.90056)
+mesh = ExtResource("9_biidn")
+skeleton = NodePath("../..")
+
+[node name="NaturePack068" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01571, 0, 6.65114)
+mesh = ExtResource("9_biidn")
+skeleton = NodePath("../..")
+
+[node name="NaturePack069" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77355, 0.138, 7.0734)
+mesh = ExtResource("9_biidn")
+skeleton = NodePath("../..")
+
+[node name="NaturePack022" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04225, 0.138, -4.89684)
+mesh = ExtResource("10_6f175")
+skeleton = NodePath("../..")
+
+[node name="NaturePack016" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.66804, 0.138, 5.3473)
+mesh = ExtResource("4_y38s8")
+skeleton = NodePath("../..")
+
+[node name="NaturePack017" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48736, 0.125365, 7.2)
+mesh = ExtResource("5_s7l24")
+skeleton = NodePath("../..")
+
+[node name="NaturePack020" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.95693, 0.138, 6.55067)
+mesh = ExtResource("11_c4xgg")
+skeleton = NodePath("../..")
+
+[node name="NaturePack021" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02954, 0.138, -2.39984)
+mesh = ExtResource("12_hdlst")
+skeleton = NodePath("../..")
+
+[node name="NaturePack023" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.962014, 0.138, 3.81799)
+mesh = ExtResource("11_c4xgg")
+skeleton = NodePath("../..")
+
+[node name="NaturePack024" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46219, 0.138, 2.1999)
+mesh = ExtResource("6_sm5xj")
+skeleton = NodePath("../..")
+
+[node name="NaturePack025" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34449, 0.138001, -3.13278)
+mesh = ExtResource("7_m2s1l")
+skeleton = NodePath("../..")
+
+[node name="NaturePack026" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95882, 0.138, 4.51556)
+mesh = ExtResource("13_4mtcx")
+skeleton = NodePath("../..")
+
+[node name="NaturePack027" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98801, 0.137999, -3.54468)
+mesh = ExtResource("14_bl0pk")
+skeleton = NodePath("../..")
+
+[node name="NaturePack070" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22665, 0.138, -5.12316)
+mesh = ExtResource("9_biidn")
+skeleton = NodePath("../..")
+
+[node name="NaturePack071" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11088, 0.138, -5.37359)
+mesh = ExtResource("8_otiq1")
+skeleton = NodePath("../..")
+
+[node name="NaturePack028" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47902, 0.138, -5.30192)
+mesh = ExtResource("11_c4xgg")
+skeleton = NodePath("../..")
+
+[node name="NaturePack072" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80669, 0.138, -5.11304)
+mesh = ExtResource("8_otiq1")
+skeleton = NodePath("../..")
+
+[node name="NaturePack029" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42146, 0.138, -5.14708)
+mesh = ExtResource("4_y38s8")
+skeleton = NodePath("../..")
+
+[node name="NaturePack030" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54819, 0.138, -5.87111)
+mesh = ExtResource("10_6f175")
+skeleton = NodePath("../..")
+
+[node name="NaturePack073" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91215, 0.138, 4.19396)
+mesh = ExtResource("8_otiq1")
+skeleton = NodePath("../..")
+
+[node name="NaturePack074" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72428, 0, 5.02146)
+mesh = ExtResource("8_otiq1")
+skeleton = NodePath("../..")
+
+[node name="NaturePack075" type="MeshInstance3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8934, 0.138, -2.53331)
+mesh = ExtResource("9_biidn")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
