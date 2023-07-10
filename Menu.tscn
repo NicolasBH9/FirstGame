@@ -65,6 +65,7 @@ size_flags_vertical = 4
 texture_normal = ExtResource("3_f5fbb")
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/Play2"]
+layout_mode = 0
 offset_left = 44.4881
 offset_top = 6.15839
 offset_right = 98.4881

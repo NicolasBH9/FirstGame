@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cj2pch1ngjaon"]
+[gd_scene load_steps=35 format=3 uid="uid://cj2pch1ngjaon"]
 
 [ext_resource type="Script" path="res://ch_spider.gd" id="1_i3hig"]
 [ext_resource type="ArrayMesh" uid="uid://tg8xrpj8bpvo" path="res://DespacitoSpider.obj" id="2_jlvhc"]
@@ -38,6 +38,37 @@ albedo_color = Color(0, 0.568627, 0, 1)
 albedo_color = Color(0.133333, 0.478431, 0.690196, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7b2oi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xbsku"]
+size = Vector3(1, 1, 1.15253)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m8k6"]
+size = Vector3(1.37924, 1, 1.54615)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8x1j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kk6vd"]
+size = Vector3(2.44464, 0.001, 7.11682)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8leme"]
+size = Vector3(7.08843, 1, 2.0958)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkk8r"]
+size = Vector3(3.13788, 1.67005, 4.61229)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fggrt"]
+size = Vector3(1.51501, 1, 1.70995)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fk22"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vkf7u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7gad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_refjo"]
+size = Vector3(1.55007, 1, 1.73276)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7gh1"]
 
 [node name="Main" type="Node3D"]
 
@@ -123,20 +154,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8111, 0.138, 7.04113)
 mesh = ExtResource("4_b4vli")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack014"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack014/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.454063, -0.0128057, -0.569484)
+shape = SubResource("BoxShape3D_xbsku")
+
 [node name="NaturePack015" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.09795, 0.138, -5.66312)
 mesh = ExtResource("5_dacag")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack015"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack015/StaticBody3D"]
+transform = Transform3D(0.429681, 0.255612, 0.00608981, 0.190129, -0.311461, -0.341823, -0.170955, 0.296065, -0.364856, 2.10225, -5.24126, 0.10884)
+shape = SubResource("BoxShape3D_2m8k6")
+
 [node name="NaturePack018" type="MeshInstance3D" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93692, 0.138, -5.72936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.93665, 0.130288, -5.80346)
 mesh = ExtResource("6_lwuk0")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack018"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack018/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188185, -1.19209e-07, 0.00183916)
+shape = SubResource("BoxShape3D_t8x1j")
 
 [node name="NaturePack019" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97693, 0.138, 7.02574)
 mesh = ExtResource("7_yy24t")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack019"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack019/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.207419, 0, -3.52615)
+shape = SubResource("BoxShape3D_kk6vd")
 
 [node name="NaturePack066" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17879, 0.138, -5.51752)
@@ -148,6 +203,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05044, 0.138, -5.30171)
 mesh = ExtResource("8_dm6cg")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack067"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack067/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.674116, 0, -0.855609)
+shape = SubResource("BoxShape3D_8leme")
+
 [node name="NaturePack065" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8849, 0, -2.90056)
 mesh = ExtResource("9_7ghti")
@@ -157,6 +218,12 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01571, 0, 6.65114)
 mesh = ExtResource("9_7ghti")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack068"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack068/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.64673, 0.0274618, 0, -0.0717537, 0.63024, 2.59159, -0.0244725, -1.46885)
+shape = SubResource("BoxShape3D_bkk8r")
 
 [node name="NaturePack069" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77355, 0.138, 7.0734)
@@ -193,15 +260,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.962014, 0.138, 3.81799)
 mesh = ExtResource("11_3gaqw")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack023"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack023/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81804, 0, -0.95438)
+shape = SubResource("BoxShape3D_fggrt")
+
 [node name="NaturePack024" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46219, 0.138, 2.1999)
 mesh = ExtResource("6_lwuk0")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack024"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack024/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.454466, 0, -0.454467)
+shape = SubResource("BoxShape3D_0fk22")
+
 [node name="NaturePack025" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34449, 0.138001, -3.13278)
 mesh = ExtResource("7_yy24t")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack025"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack025/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47719, 0, -0.454467)
+shape = SubResource("BoxShape3D_vkf7u")
 
 [node name="NaturePack026" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95882, 0.138, 4.51556)
@@ -212,6 +297,12 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98801, 0.137999, -3.54468)
 mesh = ExtResource("14_ajvkl")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack027"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack027/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47719, 0, -0.499914)
+shape = SubResource("BoxShape3D_c7gad")
 
 [node name="NaturePack070" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22665, 0.138, -5.12316)
@@ -228,6 +319,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47902, 0.138, -5.30192)
 mesh = ExtResource("11_3gaqw")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack028"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack028/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.795317, 0, -0.954381)
+shape = SubResource("BoxShape3D_refjo")
+
 [node name="NaturePack072" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80669, 0.138, -5.11304)
 mesh = ExtResource("8_dm6cg")
@@ -237,6 +334,12 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42146, 0.138, -5.14708)
 mesh = ExtResource("4_b4vli")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NaturePack029"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NaturePack029/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47719, 0, -0.54536)
+shape = SubResource("BoxShape3D_a7gh1")
 
 [node name="NaturePack030" type="MeshInstance3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54819, 0.138, -5.87111)
